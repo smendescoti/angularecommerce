@@ -24,7 +24,8 @@
                         Ver detalhes
                     </button>
                     &nbsp;
-                    <button class="btn btn-sm btn-success">
+                    <button class="btn btn-sm btn-success"
+                        (click)="adicionarItem(item)">
                         Adicionar ao Pedido
                     </button>
                 </div>
@@ -66,7 +67,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
-                <button class="btn btn-sm btn-success">
+                <button class="btn btn-sm btn-success"
+                    (click)="adicionarItem(produto)">
                     Adicionar ao Pedido
                 </button>
             </div>

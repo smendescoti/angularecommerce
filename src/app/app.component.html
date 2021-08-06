@@ -13,6 +13,15 @@
         <li class="nav-item" *ngIf="!isLoggedIn">
           <a class="nav-link" routerLink="login-user">Acesse sua Conta</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="shopping-cart">Minha cesta de compras</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          &nbsp;&nbsp;
+          <a class="btn btn-success btn-sm mt-1" routerLink="checkout">
+            <strong>Finalizar Pedido</strong>&nbsp;({{cliente.nome}})
+          </a>
+        </li>
       </ul>
       <span class="navbar-text">
         Treinamento C# .NET COTI Informatica
@@ -23,25 +32,30 @@
 
 <div class="mt-4 container">
 
-  <div class="card" *ngIf="isLoggedIn">
+  <div class="card mb-4" *ngIf="isLoggedIn">
     <div class="card-body">
       <div class="row">
+        <div class="col-md-12">
+          <strong>CLIENTE AUTENTICADO:</strong>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-3">
-          Cliente: <strong>{{cliente.nome}}</strong>
+          {{cliente.nome}}
         </div>
         <div class="col-md-3">
-          <strong>{{cliente.email}}</strong>
+          email: {{cliente.email}}
         </div>
-        <div class="col-md-3">
-          CPF: <strong>{{cliente.cpf}}</strong>
+        <div class="col-md-2">
+          CPF: {{cliente.cpf}}
         </div>
-        <div class="col-md-3 text-end">
-          <button class="btn btn-success btn-sm">
-            Finalizar Pedido
+        <div class="col-md-4 text-end">    
+          <button class="btn btn-sm btn-outline-primary">
+            Ver meu histórico de pedidos
           </button>
           &nbsp;
           <button class="btn btn-sm btn-outline-danger" (click)="logout()">
-            Sair
+            Encerrar sessão
           </button>
         </div>
       </div>

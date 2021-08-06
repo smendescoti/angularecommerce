@@ -14,11 +14,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //importando a biblioteca para requisições HTTP na API
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './products/products.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 //mapeamento das rotas
 const routes: Routes = [
   { path: 'login-user', component: LoginComponent },
   { path: 'register-user', component: RegisterComponent },
+  { path: 'shopping-cart', component: ShoppingCartComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: '', component : ProductsComponent }
 ]
 
@@ -27,7 +31,9 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ProductsComponent
+    ProductsComponent,
+    ShoppingCartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
